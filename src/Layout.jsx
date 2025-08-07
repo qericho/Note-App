@@ -1,6 +1,6 @@
 import AddTask from "./components/AddTask";
 import Navbar from "./components/Navbar";
-import SideBar from "./components/Sidebar";
+import SideBar from "./components/SideBar";
 
 const Layout = () => {
   return (
