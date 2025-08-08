@@ -1,6 +1,7 @@
 import AddTask from "./components/AddTask";
 import Navbar from "./components/Navbar";
 import SideBar from "./components/SideBar";
+import TaskContainer from "./components/TaskContainer";
 
 const Layout = () => {
   return (
@@ -13,8 +14,12 @@ const Layout = () => {
         <SideBar />
       </div>
 
-      <div className="pt-25 w-[200px] md:w-[300px] mx-auto transition-all duration-300">
-        <AddTask />
+      {/* Main Content */}
+      <div className="pt-20 pl-0 lg:pl-52 min-h-screen bg-gray-50">
+        <div className=" mx-auto px-4 py-6 space-y-6">
+          <AddTask />
+          <TaskContainer />
+        </div>
       </div>
     </div>
   );
