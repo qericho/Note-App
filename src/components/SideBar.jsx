@@ -2,15 +2,18 @@ import { MdLightbulbOutline } from "react-icons/md";
 import { IoArchiveOutline } from "react-icons/io5";
 import { IoTrashOutline } from "react-icons/io5";
 import { useContext } from "react";
-import SidebarContext from "../Context/SidebarContext";
+import { SidebarContext } from "../context/SidebarContext";
+import { ThemeContext } from "../context/ThemeCotext";
 
 const SideBar = () => {
   const { open } = useContext(SidebarContext);
+  const { dark } = useContext(ThemeContext);
 
   return (
     <div
-      className={`${open ? "hidden" : "flex"}  text-white
-      w-full bg-gray-500 h-screen border-r-gray-300 border-r py-10 px-5`}
+      className={`${open ? "hidden" : "flex"} 
+      ${dark ? "text-white" : "text-white/80"} bg-black/50
+      w-full  h-screen border-r-gray-300 border-r py-10 px-5`}
     >
       <ul className="flex flex-col gap-y-10">
         <li className="flex items-center justify-between w-[100px] hover:text-black cursor-pointer">

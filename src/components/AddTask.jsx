@@ -1,7 +1,9 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import { IoIosAdd } from "react-icons/io";
+import { ThemeContext } from "../context/ThemeCotext";
 
 const AddTask = () => {
+  const { dark } = useContext(ThemeContext);
   const [isExpanded, setIsExpanded] = useState(false);
   const wrapperRef = useRef(null);
 
@@ -24,7 +26,7 @@ const AddTask = () => {
     >
       <textarea
         rows={isExpanded ? 4 : 1}
-        className="w-full resize-none outline-none text-[14px]"
+        className={`${dark ? "placeholder-white" : "placeholder-black/50"} w-full resize-none outline-none text-[14px]`}
         placeholder="Take a note..."
       />
       {isExpanded && (

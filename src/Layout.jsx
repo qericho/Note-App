@@ -1,9 +1,12 @@
+import { useContext } from "react";
 import AddTask from "./components/AddTask";
 import Navbar from "./components/Navbar";
 import SideBar from "./components/SideBar";
 import TaskContainer from "./components/TaskContainer";
+import { ThemeContext } from "./context/ThemeCotext";
 
 const Layout = () => {
+  const { dark } = useContext(ThemeContext);
   return (
     <div className="relative">
       <div className="fixed top-0 left-0 w-full h-20 z-20 bg-white shadow">
@@ -15,7 +18,9 @@ const Layout = () => {
       </div>
 
       {/* Main Content */}
-      <div className="pt-20 pl-0 lg:pl-52 min-h-screen bg-gray-50">
+      <div
+        className={`pt-20 pl-0 lg:pl-52 min-h-screen ${dark ? "bg-black/50 text-white" : "bg-white"}`}
+      >
         <div className=" mx-auto px-4 py-6 space-y-6">
           <AddTask />
           <TaskContainer />
